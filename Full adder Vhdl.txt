@@ -1,0 +1,14 @@
+entity fullad is
+    Port ( a,b,c : in  STD_LOGIC;
+           sum,carry : out  STD_LOGIC);
+end fullad;
+
+architecture Behavioral of fullad is
+
+begin
+
+ sum <= a or b or c;
+ carry <= (a and b)or (b and c)or (c and a);
+
+
+end Behavioral;

@@ -1,0 +1,19 @@
+module Muxx(I, s, e, y);
+    input [3:0] I;
+    input [1:0] s;
+    input e;
+    output y;
+	 reg y;
+	 always @ (I,s,e)
+	 begin 
+	 if(e==1)
+	 y=1'b0;
+	 else
+	 case(s)
+	 0:y=I[0];
+	 1:y=I[1];
+	 2:y=I[2];
+	 default:y=I[3];
+	 endcase
+	 end
+endmodule

@@ -1,0 +1,17 @@
+module jkflipflop(j,k,clk, q ,qn);
+	input j,k,clk;
+    	output q ,qn;
+	reg  q,qn;
+	always @ (posedge clk)
+	begin
+	if(j==0 & k==0)
+	  q=q;
+	else if (j==0& k==1)
+	  q=1'b0;
+	else if (j==1& k==0)
+	  q=1'b1;
+	else
+	 q=~q;
+	 qn=~q;
+	end
+endmodule

@@ -1,0 +1,16 @@
+module SR(s,k,clk, q);
+	input s,k,clk;
+    	output q;
+	reg q;
+	always @ (posedge clk)
+	begin
+	if(s==0 & k==0)
+	  q=q;
+	else if (s==0& k==1)
+	  q=1'b0;
+	else if (s==1& k==0)
+	  q=1'b1;
+	else
+	 q=1'bz;
+	end
+endmodule
